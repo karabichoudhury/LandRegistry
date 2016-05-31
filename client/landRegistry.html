@@ -1,0 +1,149 @@
+<!-- <template name="landRegistry">
+	<div >
+		
+
+		<form>
+			<div class="row">
+				
+                    <label class="label black">Postcode : </label>
+                
+                
+                    <label class="input">
+                        <input type="text" name="postcode" id="postcode" placeholder="Enter post code"
+                                   />      
+                    </label>                            
+                
+			</div>
+			<div class="row btn_rig">
+				<button id="fetch" class="button">Submit
+                    <span id="saveSpinner" style="display: none;">
+                        <i class="fa fa-spinner fa-spin"></i>
+                    </span>
+                </button>
+			</div>
+		</form>
+
+		<div class="row">
+			<section class="col-md-12">
+                <div  id="chart">
+                    <h2 class="text-center">Property Data</h2>
+                    <svg style="height:300px;" class="pull-left"></svg>
+                 </div>
+
+            </section>
+
+            <div class="clearfix"></div>
+            <section class="col-md-12">
+                             
+                    <div class="table-responsive">
+                        <table class="display table table-striped table-bordered"   id="example" >
+                            <thead class="table_head">
+                                <tr>
+                                      <th>Company</th>
+                                      <th>Booth Visited</th>              
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>Company</td>
+                                    <td>Booth Visited</td>                    
+                                </tr>
+                            </tfoot>
+                        </table>  
+                                                            
+                    </div>
+            </section>  
+		</div>
+	</div>
+</template> -->
+
+
+<template name="landRegistry">
+    <div class="search-form-container">
+        {{> alertMessage}}
+        <form class="form-horizontal search" role="form" action="/app/hpi/search" accept-charset="UTF-8" method="post">
+            <input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="gU1EFqCjFBnwo24Tg6/aABf6uugXUE+H/DGm9eRECuQFhV/NljJ4qtfwmETwSlowFkqwv8yoRerDR5Yc6RrYMg==">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <section class="area-selection">
+                                    <h3>
+                                        Enter a pincode
+                                    </h3>
+                                    <div class="col-sm-9">
+                                        <div class="form-group">
+                                            <input type="text" name="search_0" id="pincode" class="form-control ui-autocomplete-input" autocomplete="off">
+                                                <span class="form-control-feedback js clear-selection">
+                                                    <a class="action action-remove-selection btn hidden" data-search-id="0" >
+                                                        <i class="fa fa-times-circle fa-lg"></i>
+                                                    </a>
+                                                </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="small">
+                                            <a class="btn btn-primary action action-show-full-results"  id="fetch" type="submit" >
+                                                Get Results
+                                            </a>
+                                        </div>
+                                        <div class="modal fade" id="spinner" tabindex="-1" style="text-align:center; color:#ffffff; padding:300px auto 0px; overflow:hidden; background:#000000; opacity:0.6;" role="dialog">
+                                            <div class="modal-dialog modal-sm" style="width:100%!important;">
+                                                <div class="loader">Loading...</div>
+ 
+                                                </div> 
+                                            </div>
+                                       
+                                        </div>
+                                   
+                                </section>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                      
+                    </div>
+                </div>
+                
+        </form>
+
+        <div class="row">
+            <div id="results-preview">
+                <div class="col-md-12">
+                    <section>
+                        <div id="results-header">
+                            <h2>Preview Data</h2>
+
+                            <div class="related-locations small">
+                                <br>
+                            </div>
+
+                            <table class="display table table-striped table-bordered"   id="example" >
+                                <thead class="table_head">
+                                    <tr>
+                                      <th>Street</th>
+                                      <th>Town</th> 
+                                      <th>Country</th> 
+                                      <th>PostCode</th>
+                                      <th>Amount</th>
+                                      <th>Date</th>
+                                      <th>Category</th>             
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                                <tfoot>
+                                   
+                                </tfoot>
+                            </table> 
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</template>
