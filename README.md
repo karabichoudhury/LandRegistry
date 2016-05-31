@@ -1,2 +1,4 @@
 # LandRegistry
-# sample meteor application to integrate with npm
+
+
+Sample meteor application to integrate with npm
